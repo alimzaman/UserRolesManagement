@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (ViewBag.displayMenu == "Yes")
+{
+<h1>Welcome Admin. @ViewBag.Name.</h1>
+    <h3>
+        @Html.ActionLink("Manage Role", "Index", "Role")
+    </h3>
+}
+else
+{
+    <h2>  Welcome <strong>@ViewBag.Name</strong> :) .We will add user module soon </h2>
+}
+
+@if (ViewBag.displayMenu == "Admin")
+{
+    <div>
+
+        <h2> @Html.ActionLink("Create New User", "RegisterNew", "Account") </h2>
+    </div>
+
+    <div>
+        <h2>
+            @Html.ActionLink("Manage Role", "Index", "Roles")
+        </h2>
+    </div>
+
+}
+else if (ViewBag.displayMenu == "Manager")
+{
+    <h2>Welcome Manager @ViewBag.Name</h2>
+}
+else if (ViewBag.displayMenu == "Accountant")
+{
+    <h2>Welcome Accountant  @ViewBag.Name</h2>
+}
+else
+{
+    <h2>  Welcome <strong>@ViewBag.Name</strong> </h2>
+    <h3>Welcome to User's page</h3>
+}
